@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11194222-918f-4a11-a992-092d75c6aa1d" name="Default Changelist" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/style.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/error.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +38,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605714621333</updated>
-      <workItem from="1605714622543" duration="844000" />
+      <workItem from="1605714622543" duration="1155000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605715414908</created>
@@ -55,7 +47,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605715414908</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit">
+      <created>1605715629380</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605715629380</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -64,6 +63,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="880" y="356" key="#Deployment" timestamp="1605715240174">
@@ -74,14 +75,18 @@
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
     <state x="838" y="275" key="CommitChangelistDialog2/0.22.2560.1340@0.22.2560.1340" timestamp="1605715246260" />
+    <state x="1150" y="595" key="Github.ShareDialog" timestamp="1605715771253">
+      <screen x="0" y="22" width="2560" height="1340" />
+    </state>
+    <state x="1150" y="595" key="Github.ShareDialog/0.22.2560.1340@0.22.2560.1340" timestamp="1605715771253" />
     <state x="781" y="330" key="SettingsEditor" timestamp="1605714829053">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
     <state x="781" y="330" key="SettingsEditor/0.22.2560.1340@0.22.2560.1340" timestamp="1605714829053" />
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1605715453017">
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1605715726437">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1605715453017" />
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1605715726437" />
     <state x="1083" y="432" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605715253251">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
