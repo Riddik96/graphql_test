@@ -1,8 +1,8 @@
-var express = require('express');
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const app = express();
 
-var app = express();
-
-
+app.use('/api/graph', graphqlHTTP({}));
 
 app.listen(process.env.PORT || 3000);
 

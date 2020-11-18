@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11194222-918f-4a11-a992-092d75c6aa1d" name="Default Changelist" comment="Set port 3000">
+    <list default="true" id="11194222-918f-4a11-a992-092d75c6aa1d" name="Default Changelist" comment="Import graphql">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +39,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605714621333</updated>
-      <workItem from="1605714622543" duration="2233000" />
+      <workItem from="1605714622543" duration="2685000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605715414908</created>
@@ -96,7 +97,28 @@
       <option name="project" value="LOCAL" />
       <updated>1605716979842</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Set port 3000">
+      <created>1605717015347</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605717015347</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Import graphql">
+      <created>1605717209360</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605717209360</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Import graphql">
+      <created>1605717279530</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605717279530</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,7 +128,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Set port 80" />
     <MESSAGE value="Set port 3000" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set port 3000" />
+    <MESSAGE value="Import graphql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Import graphql" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -123,14 +146,30 @@
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
     <state x="1150" y="595" key="Github.ShareDialog/0.22.2560.1340@0.22.2560.1340" timestamp="1605716316627" />
+    <state width="2539" height="383" key="GridCell.Tab.0.bottom" timestamp="1605717449534">
+      <screen x="0" y="22" width="2560" height="1340" />
+    </state>
+    <state width="2539" height="383" key="GridCell.Tab.0.bottom/0.22.2560.1340@0.22.2560.1340" timestamp="1605717449534" />
+    <state width="2539" height="383" key="GridCell.Tab.0.center" timestamp="1605717449533">
+      <screen x="0" y="22" width="2560" height="1340" />
+    </state>
+    <state width="2539" height="383" key="GridCell.Tab.0.center/0.22.2560.1340@0.22.2560.1340" timestamp="1605717449533" />
+    <state width="2539" height="383" key="GridCell.Tab.0.left" timestamp="1605717449532">
+      <screen x="0" y="22" width="2560" height="1340" />
+    </state>
+    <state width="2539" height="383" key="GridCell.Tab.0.left/0.22.2560.1340@0.22.2560.1340" timestamp="1605717449532" />
+    <state width="2539" height="383" key="GridCell.Tab.0.right" timestamp="1605717449533">
+      <screen x="0" y="22" width="2560" height="1340" />
+    </state>
+    <state width="2539" height="383" key="GridCell.Tab.0.right/0.22.2560.1340@0.22.2560.1340" timestamp="1605717449533" />
     <state x="781" y="330" key="SettingsEditor" timestamp="1605714829053">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
     <state x="781" y="330" key="SettingsEditor/0.22.2560.1340@0.22.2560.1340" timestamp="1605714829053" />
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1605716983614">
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1605717280865">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1605716983614" />
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1605717280865" />
     <state x="1083" y="432" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605715253251">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
