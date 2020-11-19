@@ -11,7 +11,7 @@ const Episode = new mongoose.Schema({
 const animeSchema = new mongoose.Schema({
     title: String,
     description: String,
-    image: [String],
+    image: String,
     genre: [String],
     totalEpisodes: Number,
     seasons: Number,

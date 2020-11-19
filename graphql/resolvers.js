@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const anime = require('../models/anime');
+const animeModel = require('../models/anime');
 
 module.exports = {
     hello: () => {
@@ -11,8 +11,11 @@ module.exports = {
     },
 
     getAnime: () => {
-        anime.find({}, function (animeList) {
-            return animeList;
-        });
+        return animeModel.find({});
+    },
+
+    addAnime: ({anime}) => {
+        animeDocument = new animeModel(anime);
+        return animeDocument.save();
     }
 };

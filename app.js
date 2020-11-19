@@ -17,7 +17,7 @@ mongoose.connect('mongodb+srv://animeAdmin:animeAdmin9000@cluster0.bqbxg.gcp.mon
         graphiql: true,
     }));
 
-    app.listen(process.env.PORT || 3000);
+    app.listen(process.env.PORT || 8080);
 
 });
 
