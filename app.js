@@ -1,28 +1,15 @@
 const express = require('express');
-var {graphqlHTTP} = require('express-graphql');
-var {buildSchema} = require('graphql');
-
-var schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
-
-const root = {
-    hello: () => {
-        return 'Hello world!';
-    },
-};
+const {graphqlHTTP} = require('express-graphql');
+const schema = require('./graphql/schema');
+const resolvers = require('./graphql/resolvers');
 
 const app = express();
 
 app.use('/graphql', graphqlHTTP({
     schema: schema,
-    rootValue: root,
+    rootValue: resolvers,
     graphiql: true,
 }));
-
-app.use('/api/graph', graphqlHTTP({}));
 
 app.listen(process.env.PORT || 3000);
 

@@ -29,17 +29,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11194222-918f-4a11-a992-092d75c6aa1d" name="Default Changelist" comment="Import graphql" />
+    <list default="true" id="11194222-918f-4a11-a992-092d75c6aa1d" name="Default Changelist" comment="Import graphql">
+      <change afterPath="$PROJECT_DIR$/graphql/schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kTBIUPboL4ZueoQn2mqgCZvDIH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,6 +79,7 @@
       <updated>1605714621333</updated>
       <workItem from="1605714622543" duration="2685000" />
       <workItem from="1605717455900" duration="18000" />
+      <workItem from="1605779181468" duration="1465000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605715414908</created>
@@ -151,7 +165,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605717465281</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added first schema">
+      <created>1605779244703</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605779244703</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added first schema">
+      <created>1605779412732</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605779412732</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,13 +195,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Set port 80" />
     <MESSAGE value="Set port 3000" />
     <MESSAGE value="Import graphql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Import graphql" />
+    <MESSAGE value="Added first schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added first schema" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -210,10 +240,10 @@
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
     <state x="781" y="330" key="SettingsEditor/0.22.2560.1340@0.22.2560.1340" timestamp="1605714829053" />
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1605717467235">
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1605779417602">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1605717467235" />
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1605779417602" />
     <state x="1083" y="432" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605715253251">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
