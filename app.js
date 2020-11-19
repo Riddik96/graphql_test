@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://animeAdmin:animeAdmin9000@cluster0.bqbxg.gcp.mon
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(db => {
-
+    global.connection = db.connection;
     app.use('/graphql', graphqlHTTP({
         schema: schema,
         rootValue: resolvers,
