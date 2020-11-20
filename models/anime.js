@@ -12,6 +12,7 @@ const animeSchema = new mongoose.Schema({
     title: String,
     description: String,
     image: String,
+    cover: String,
     genre: [String],
     totalEpisodes: Number,
     seasons: Number,

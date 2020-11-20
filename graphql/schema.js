@@ -24,6 +24,7 @@ module.exports = buildSchema(`
     title: String
     description: String
     image: String
+    cover: String
     episodes: [Episode]
     genre: [String]
     totalEpisodes: Int
@@ -34,6 +35,7 @@ module.exports = buildSchema(`
     title: String
     description: String
     image: String
+    cover: String
     episodes: [EpisodeInput]
     genre: [String]
     totalEpisodes: Int
