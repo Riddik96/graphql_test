@@ -102,6 +102,10 @@ app.use('/scrap', async function (req, res, next) {
     }
 })
 
+app.use('/', function (req, res, next) {
+    res.send(process.env.PORT)
+})
+
 app.listen(process.env.PORT || 8080);
 
 function sleep(milliseconds) {
