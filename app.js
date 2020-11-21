@@ -25,6 +25,7 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 app.use('/scrap', async function (req, res, next) {
+    res.setHeader('Content-Type', 'text/html');
     const archive = await got('https://www.animesaturn.it/animelistold?load_all=1');
     const $ = cheerio.load(archive.body);
     var links = $('a');
@@ -99,7 +100,9 @@ app.use('/scrap', async function (req, res, next) {
             anime.episodes = ep;
         }
         anime.save();
+        res.write('Completato: ' + anime.title);
     }
+    res.send('Completato');
 })
 
 app.use('/', function (req, res, next) {
