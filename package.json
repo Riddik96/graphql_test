@@ -18,5 +18,9 @@
     "mongoose": "^5.10.15",
     "cheerio": "^1.0.0-rc.3",
     "got": "^11.8.0"
+  },
+  "devDependencies": {
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2"
   }
 }

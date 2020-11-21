@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 
 const Episode = new mongoose.Schema({
     title: String,
-    description: String,
     video: [String],
     number: Number,
-    season: Number,
 });
 
 const animeSchema = new mongoose.Schema({
@@ -14,8 +12,6 @@ const animeSchema = new mongoose.Schema({
     image: String,
     cover: String,
     genre: [String],
-    totalEpisodes: Number,
-    seasons: Number,
     episodes: [Episode]
 });
 
