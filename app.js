@@ -101,6 +101,7 @@ app.use('/scrap', async function (req, res, next) {
         }
         anime.save();
         res.write('Completato: ' + anime.title);
+        res.flush();
     }
     res.write('Completato');
     res.end();
