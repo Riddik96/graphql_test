@@ -11,6 +11,10 @@ const fetch = require('node-fetch');
 
 const app = express();
 
+app.use('/', function (req, res, next) {
+    res.send('Hello Anime9000');
+})
+
 mongoose.connect('mongodb+srv://animeAdmin:animeAdmin9000@cluster0.bqbxg.gcp.mongodb.net/anime9000?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
