@@ -18,7 +18,7 @@ const db = mongoose.connect('mongodb+srv://animeAdmin:animeAdmin9000@cluster0.bq
 
 global.connection = db.connection;
 
-app.use('/static', express.static('static'));
+app.use('/static', express.static(__dirname + '/static'));
 
 app.use('/graphql', graphqlHTTP({
     schema: schema,
