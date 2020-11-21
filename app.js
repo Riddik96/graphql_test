@@ -97,7 +97,7 @@ mongoose.connect('mongodb+srv://animeAdmin:animeAdmin9000@cluster0.bqbxg.gcp.mon
                 ep.number = ep.title.replace(/\D+/g, "");
                 anime.episodes = ep;
             }
-            console.log(anime.episodes)
+            anime.save();
         }
     })
 
