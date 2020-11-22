@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "ms": "^2.1.2",
+    "node-cron": "^2.0.3",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2"
   }

@@ -9,6 +9,7 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const fetch = require('node-fetch');
 const ms = require('ms');
+const cron = require('node-cron');
 
 const app = express();
 
@@ -19,6 +20,10 @@ const db = mongoose.connect('mongodb+srv://animeAdmin:animeAdmin9000@cluster0.bq
 
 global.connection = db.connection;
 
+const scrap = cron.schedule('* */6 * * *', () => {
+    scrapAnimeSaturn();
+});
+
 app.use('/static', express.static(__dirname + '/static'));
 
 app.use('/graphql', graphqlHTTP({
@@ -28,8 +33,7 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true,
 }));
 
-app.use('/scrap', setConnectionTimeout('6h'), async function (req, res, next) {
-    res.setHeader('Content-Type', 'text/html');
+async function scrapAnimeSaturn() {
     const archive = await got('https://www.animesaturn.it/animelistold?load_all=1');
     const $ = cheerio.load(archive.body);
     var links = $('a');
@@ -40,6 +44,13 @@ app.use('/scrap', setConnectionTimeout('6h'), async function (req, res, next) {
         var animePage = cheerio.load(page.body);
         var anime = new Anime();
         anime.title = animePage('img.img-fluid.cover-anime.rounded').attr('alt');
+        let episodes = animePage('.bottone-ep');
+        let match = null;
+        if (Anime.exists({'title': anime.title})) {
+            match = await Anime.aggregate([{$match: {title: anime.title}}, {$project: {episodes: {$size: '$episodes'}}}]);
+            match = match[0].episodes;
+            if (match === episodes.length) continue;
+        }
         anime.description = animePage('div#full-trama').text();
         anime.image = '/static/images/anime/' + Buffer.from(anime.title).toString('base64');
         if (animePage('img.img-fluid.cover-anime.rounded').attr('src').includes('.jpg')) {
@@ -49,10 +60,11 @@ app.use('/scrap', setConnectionTimeout('6h'), async function (req, res, next) {
         } else if (animePage('img.img-fluid.cover-anime.rounded').attr('src').includes('.jpeg')) {
             anime.image += '.jpeg';
         }
-        let response = await fetch(animePage('img.img-fluid.cover-anime.rounded').attr('src'));
-        let buffer = await response.buffer();
-        await fs.writeFile('.' + anime.image, buffer, () =>
-            console.log('finished downloading!'));
+        if (!fs.existsSync('.' + anime.image)) {
+            let response = await fetch(animePage('img.img-fluid.cover-anime.rounded').attr('src'));
+            let buffer = await response.buffer();
+            await fs.writeFile('.' + anime.image, buffer);
+        }
         var cover = animePage('div#anime').find('div.banner').attr('style');
         var start = cover.indexOf('url(');
         var end = cover.indexOf("')");
@@ -64,20 +76,20 @@ app.use('/scrap', setConnectionTimeout('6h'), async function (req, res, next) {
         } else if (cover.slice(start + 5, end).includes('.jpeg')) {
             anime.cover += '.jpeg';
         }
-        response = await fetch(animePage('img.img-fluid.cover-anime.rounded').attr('src'));
-        buffer = await response.buffer();
-        await fs.writeFile('.' + anime.cover, buffer, () =>
-            console.log('finished downloading!'));
+        if (!fs.existsSync('.' + anime.cover)) {
+            let response = await fetch(animePage('img.img-fluid.cover-anime.rounded').attr('src'));
+            let buffer = await response.buffer();
+            await fs.writeFile('.' + anime.cover, buffer);
+        }
         var generi = animePage('.generi-as');
         anime.genre = [];
         generi.each(function (i, genere) {
             anime.genre.push(animePage(genere).text().replace('\t', '').replace('\n', ''));
         });
         anime.episodes = [];
-        let episodes = animePage('.bottone-ep');
         for (let episode in episodes) {
             episode = parseInt(episode);
-            if (isNaN(episode)) continue;
+            if (isNaN(episode) || episode + 1 <= match) continue;
             let ep = {};
             ep.title = animePage(episodes[episode]).text().replace('\n', '').trim().replace('\t', '');
             let link = animePage(episodes[episode]).attr('href');
@@ -104,28 +116,16 @@ app.use('/scrap', setConnectionTimeout('6h'), async function (req, res, next) {
             anime.episodes.push(ep);
         }
         anime.save();
-        res.write('Completato: ' + anime.title + '\n');
-        res.flush();
     }
-    res.write('Completato');
-    res.end();
-})
+}
 
 app.use('/', function (req, res, next) {
     res.send(process.env.PORT)
 })
 
-app.listen(process.env.PORT || 3333);
-
-function setConnectionTimeout(time) {
-    var delay = typeof time === 'string'
-        ? ms(time)
-        : Number(time || 5000);
-
-    return function (req, res, next) {
-        res.connection.setTimeout(delay);
-        next();
-    }
-}
+app.listen(process.env.PORT || 3333, function () {
+    scrapAnimeSaturn();
+    scrap.start();
+});
 
 module.exports = app;
