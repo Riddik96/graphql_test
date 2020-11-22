@@ -100,7 +100,7 @@ app.use('/scrap', async function (req, res, next) {
                 ep.video.push(source);
             }
             ep.number = ep.title.replace(/\D+/g, "");
-            anime.episodes = ep;
+            anime.episodes.push(ep);
         }
         anime.save();
         res.write('Completato: ' + anime.title);
