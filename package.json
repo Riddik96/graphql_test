@@ -20,6 +20,7 @@
     "got": "^11.8.0"
   },
   "devDependencies": {
+    "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2"
   }
