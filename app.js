@@ -27,7 +27,7 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true,
 }));
 
-app.use('/scrap', async function (req, res, next) {
+app.use('/scrap', setConnectionTimeout('6h'), async function (req, res, next) {
     res.setHeader('Content-Type', 'text/html');
     const archive = await got('https://www.animesaturn.it/animelistold?load_all=1');
     const $ = cheerio.load(archive.body);
@@ -116,12 +116,15 @@ app.use('/', function (req, res, next) {
 
 app.listen(process.env.PORT || 3333);
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
+function setConnectionTimeout(time) {
+    var delay = typeof time === 'string'
+        ? ms(time)
+        : Number(time || 5000);
+
+    return function (req, res, next) {
+        res.connection.setTimeout(delay);
+        next();
+    }
 }
 
 module.exports = app;
