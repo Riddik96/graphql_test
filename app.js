@@ -13,7 +13,7 @@ const cron = require('node-cron');
 
 const app = express();
 
-const db = mongoose.connect('mongodb+srv://animeAdmin:animeAdmin9000@cluster0.bqbxg.gcp.mongodb.net/anime9000?retryWrites=true&w=majority', {
+const db = mongoose.connect('mongodb://admin:Nettuno96@47.91.78.18:27017/anime9000?authSource=anime9000&readPreference=primary', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -64,7 +64,7 @@ async function scrapAnimeSaturn() {
         if (!fs.existsSync('.' + anime.image)) {
             let response = await fetch(animePage('img.img-fluid.cover-anime.rounded').attr('src'));
             let buffer = await response.buffer();
-            await fs.writeFile('.' + anime.image, buffer);
+            fs.writeFileSync('.' + anime.image, buffer);
         }
         var cover = animePage('div#anime').find('div.banner').attr('style');
         var start = cover.indexOf('url(');
@@ -80,7 +80,7 @@ async function scrapAnimeSaturn() {
         if (!fs.existsSync('.' + anime.cover)) {
             let response = await fetch(animePage('img.img-fluid.cover-anime.rounded').attr('src'));
             let buffer = await response.buffer();
-            await fs.writeFile('.' + anime.cover, buffer);
+            fs.writeFileSync('.' + anime.cover, buffer);
         }
         var generi = animePage('.generi-as');
         anime.genre = [];
