@@ -42,15 +42,16 @@ async function scrapAnimeSaturn() {
         if (animeLink === undefined) continue;
         var page = await got(animeLink);
         var animePage = cheerio.load(page.body);
-        var anime = new Anime();
-        anime.title = animePage('img.img-fluid.cover-anime.rounded').attr('alt');
+        let anime;
         let episodes = animePage('.bottone-ep');
-        let match = null;
-        if (Anime.exists({'title': anime.title})) {
-            match = await Anime.aggregate([{$match: {title: anime.title}}, {$project: {episodes: {$size: '$episodes'}}}]);
-            match = match[0].episodes;
-            if (match === episodes.length) continue;
+        if (await Anime.exists({'title': animePage('img.img-fluid.cover-anime.rounded').attr('alt')})) {
+            anime = await Anime.findOne({"title": animePage('img.img-fluid.cover-anime.rounded').attr('alt')});
+            if (anime.episodes.length === episodes.length) continue;
+        } else {
+            anime = new Anime();
+            anime.episodes = [];
         }
+        anime.title = animePage('img.img-fluid.cover-anime.rounded').attr('alt');
         anime.description = animePage('div#full-trama').text();
         anime.image = '/static/images/anime/' + Buffer.from(anime.title).toString('base64');
         if (animePage('img.img-fluid.cover-anime.rounded').attr('src').includes('.jpg')) {
@@ -86,10 +87,10 @@ async function scrapAnimeSaturn() {
         generi.each(function (i, genere) {
             anime.genre.push(animePage(genere).text().replace('\t', '').replace('\n', ''));
         });
-        anime.episodes = [];
         for (let episode in episodes) {
             episode = parseInt(episode);
-            if (isNaN(episode) || episode + 1 <= match) continue;
+            if (isNaN(episode)) continue;
+            if (episode < anime.episodes.length) continue;
             let ep = {};
             ep.title = animePage(episodes[episode]).text().replace('\n', '').trim().replace('\t', '');
             let link = animePage(episodes[episode]).attr('href');
