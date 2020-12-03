@@ -13,7 +13,7 @@ const cron = require('node-cron');
 
 const app = express();
 
-const db = mongoose.connect('mongodb://admin:Nettuno96@47.91.78.18:27017/anime9000?authSource=anime9000&readPreference=primary', {
+const db = mongoose.connect('mongodb://appAdmin:Nettuno96@47.91.78.18:27017/anime9000?authSource=admin&readPreference=primary', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -37,6 +37,7 @@ async function scrapAnimeSaturn() {
     const archive = await got('https://www.animesaturn.it/animelistold?load_all=1');
     const $ = cheerio.load(archive.body);
     var links = $('a');
+    let animeList = [];
     for (var link in links) {
         var animeLink = $(links[link]).attr('href');
         if (animeLink === undefined) continue;
@@ -116,6 +117,10 @@ async function scrapAnimeSaturn() {
             ep.number = ep.title.replace(/\D+/g, "");
             anime.episodes.push(ep);
         }
+        animeList.push(anime);
+    }
+
+    for (let anime in animeList) {
         anime.save();
     }
 }
