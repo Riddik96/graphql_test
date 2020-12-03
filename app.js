@@ -37,7 +37,6 @@ async function scrapAnimeSaturn() {
     const archive = await got('https://www.animesaturn.it/animelistold?load_all=1');
     const $ = cheerio.load(archive.body);
     var links = $('a');
-    let animeList = [];
     for (var link in links) {
         var animeLink = $(links[link]).attr('href');
         if (animeLink === undefined) continue;
@@ -117,10 +116,6 @@ async function scrapAnimeSaturn() {
             ep.number = ep.title.replace(/\D+/g, "");
             anime.episodes.push(ep);
         }
-        animeList.push(anime);
-    }
-
-    for (let anime in animeList) {
         anime.save();
     }
 }
