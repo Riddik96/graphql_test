@@ -86,7 +86,8 @@
       <workItem from="1605717455900" duration="18000" />
       <workItem from="1605779181468" duration="9488000" />
       <workItem from="1605880738509" duration="6677000" />
-      <workItem from="1606994341597" duration="350000" />
+      <workItem from="1606994341597" duration="912000" />
+      <workItem from="1607091192556" duration="270000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605715414908</created>
@@ -249,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606990840400</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="TEST">
+      <created>1606995930695</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1606995930695</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +298,8 @@
     <MESSAGE value="Create Schemas" />
     <MESSAGE value="Added Query and Mutations" />
     <MESSAGE value="MONGO SERVER CHANGED" />
-    <option name="LAST_COMMIT_MESSAGE" value="MONGO SERVER CHANGED" />
+    <MESSAGE value="TEST" />
+    <option name="LAST_COMMIT_MESSAGE" value="TEST" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -379,10 +388,10 @@
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
     <state x="781" y="330" key="SettingsEditor/0.22.2560.1340@0.22.2560.1340" timestamp="1605714829053" />
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1606990841803">
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2" timestamp="1606995933262">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
-    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1606990841803" />
+    <state x="880" y="418" key="Vcs.Push.Dialog.v2/0.22.2560.1340@0.22.2560.1340" timestamp="1606995933262" />
     <state x="1083" y="432" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605715253251">
       <screen x="0" y="22" width="2560" height="1340" />
     </state>
